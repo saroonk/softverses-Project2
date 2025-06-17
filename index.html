@@ -30,28 +30,39 @@
 
 
 
-    <section class="main-section">
-    <div class="main-hero">
+    <section class="main-section ">
+    <div class="main-hero ">
       <nav class="navbar navbar-expand-lg navbar-dark navbar-custom navbar-transparent">
         <div class="container navbar-container">
-          <a class="navbar-brand" href="#">logo</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <a class="navbar-brand " href="#">logo</a>
+          <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav text-center">
-              <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+              <li class="nav-item"><a class="nav-link " href="#">Home</a></li>
+              <li class="nav-item"><a class="nav-link " href="#">Projects</a></li>
+              <li class="nav-item"><a class="nav-link " href="#">Gallery</a></li>
+              <li class="nav-item"><a class="nav-link " href="#">About Us</a></li>
             </ul>
           </div>
-          <a href="#" class="btn-combo-outside d-none d-lg-inline-flex">
+          <a href="#" class="btn-combo-outside d-none d-lg-inline-flex ">
             Contact with us
             <span class="icon-circle"><i class="bi bi-arrow-up-right"></i></span>
           </a>
         </div>
       </nav>
+
+
+
+
+
+
+
+
+
+
+
 
       <div class="container hero-content">
         <h1>CRAFTING TIMELESS INTERIORS<br>WITH MODERN ELEGANCE</h1>
@@ -92,11 +103,14 @@
             <div class="row align-items-center h-100 d-flex">
                 <div class="col-lg-6 col-md-12">
                     <div class="ps-lg-5 px-sm-5">
-                        <div class="about-label">ABOUT</div>
+                      <div class="about-content">
+                                                <div class="about-label">ABOUT</div>
                         <h1 class="about-heading">We are the best interior design studio in India</h1>
                         <p class="about-description">
                             Opulent Interio, established in 2012 in Trichur, Kerala, is a premier interior design firm dedicated to creating luxurious and bespoke environments. Over the past decade, we have built a reputation for delivering unparalleled design solutions that combine elegance, functionality, and innovation. Our commitment to excellence has positioned us as a leader in the high-end interior design market.
                         </p>
+                      </div>
+
                         <a href="#" class="learn-btn">LEARN ABOUT</a>
                         
                         <div class="stats-container  ps-3">
@@ -440,7 +454,7 @@
 
 
   <section class="testimonial-container-section">
-  <div class="container testimonial-section py-5">
+  <div class="container testimonial-section py-5 ">
     <div class="row">
       <div class="col-12 position-relative">
         <div class="testimonial-wrapper">
@@ -528,7 +542,7 @@
 
 
 
-    <section class="subscribe">
+    <section class="subscribe ">
         <div class="conatiner-fluid  ">
         <h5>Subscribe to Our Newsletter for <br> Design Insights</h5>
         <p>Be the first to discover trends, inspirations, and special offers as  
@@ -767,6 +781,33 @@ function resetAutoSlide() {
 
 updateCards();
 startAutoSlide();
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const serviceCards = document.querySelectorAll('.service-card , .about-heading, .about-label, .about-description, .learn-btn, .timeline-wrapper, .top-image , .bottom-image, .dream-containe, .blog-card')
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+          observer.unobserve(entry.target); 
+        }
+      });
+    }, {
+      threshold: 0.3
+    });
+
+    serviceCards.forEach(card => {
+      observer.observe(card);
+    });
+  });
 
 
     </script>

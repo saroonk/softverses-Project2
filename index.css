@@ -24,6 +24,43 @@ html, body {
 
 }
 
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* appear */
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    /* transform: scale(0.8); */
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    /* transform: scale(1); */
+    transform: translateX(0);
+  }
+}
+
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(150%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
 
 /* hero section?///////////////////// */
@@ -322,7 +359,27 @@ html, body {
             background-color: #191D1D;
             min-height: 100vh;
             padding: 80px 0;
+
         }
+        .about-label.animate {
+  animation: fadeInScale 0.6s ease-out forwards;
+}
+
+        .about-heading.animate {
+  animation: fadeInScale 0.7s ease-out forwards;
+}
+
+        .about-description.animate {
+  animation: fadeInScale 0.8s ease-out forwards;
+}
+
+
+        .learn-btn.animate {
+  animation: fadeInScale 0.7s ease-out forwards;
+}
+        .timeline-wrapper.animate {
+  animation: fadeInScale 0.7s ease-out forwards;
+}
         
         .about-section .about-label {
             font-family: 'Poppins', sans-serif;
@@ -405,6 +462,12 @@ html, body {
             height: 500px;
         } */
 
+                .top-image.animate {
+  animation: fadeInScale 0.7s ease-out forwards;
+}
+                .bottom-image.animate {
+  animation: fadeInScale 0.7s ease-out forwards;
+}
 
         /* .top-image img{
             height: 370px;
@@ -693,6 +756,10 @@ html, body {
             align-items: flex-start;
             gap: 20px;
         }
+
+        .service-card.animate {
+  animation: fadeInScale 0.7s ease-out forwards;
+}
 
         .services-section .service-icon {
             width: 60px;
@@ -1341,6 +1408,11 @@ html, body {
             background-color: #191D1D;
         }
 
+
+                        .dream-container.animate {
+  animation: appear 0.7s ease-out forwards;
+}
+
         .dream-container .left-section {
             position: relative;
             height: 700px;
@@ -1610,6 +1682,7 @@ html, body {
             margin: 0;
       padding: 0;
       overflow-x: hidden;
+      
 
     }
 
@@ -1617,6 +1690,7 @@ html, body {
       display: flex;
       flex-wrap: nowrap; 
       width: 100vw; 
+      
     }
 
     .images-row .row-img {
@@ -1624,6 +1698,7 @@ html, body {
       height: 415px;
       object-fit: cover;
       display: block;
+      
     }
 
     @media (max-width: 576px) {
@@ -1670,6 +1745,17 @@ html, body {
       color: #ccc;
       font-family: 'Poppins', sans-serif;
     }
+   
+
+    
+
+
+
+
+        .blog-card.animate {
+  animation: fadeInScale 0.7s ease-out forwards;
+}
+
 
     .blog-section .blog-card img {
       width: 100%;
@@ -1800,6 +1886,7 @@ html, body {
          opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
+
 
     }
 .testimonial-container-section .testimonial-card.active {
@@ -2099,6 +2186,7 @@ html, body {
     footer {
       padding-top: 40px;
       background-color: #0e0f0f;
+      
     }
 
     .footer-nav {
