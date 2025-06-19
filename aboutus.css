@@ -196,6 +196,9 @@ html, body {
             padding: 100px 0;
             background: #000;
         }
+        .content-section img{
+          border-radius: 30px;
+        }
 
         .content-section:nth-child(even) {
             background: #0a0a0a;
@@ -247,6 +250,25 @@ html, body {
             line-height: 1.7;
             color: #d0d0d0;
         }
+
+
+
+
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+          border: 1px solid rgb(144, 141, 141);
+
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(143, 142, 142, 0.947);
+}
+
+
+        /* .service-card:hover{
+          border: 1px solid white;
+        } */
 
         .why-choose-us {
             background: #000;
@@ -346,7 +368,7 @@ html, body {
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #fff, #ccc);
+            background: linear-gradient(30deg, #7AAA3F, white);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -445,8 +467,9 @@ html, body {
 
 
 
-
-
+.why-choose-us i{
+  color: #7AAA3F;
+}
 
 
 

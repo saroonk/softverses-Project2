@@ -147,6 +147,28 @@ html, body {
   transform: translateY(-2px);
 }
 
+.main-hero .nav-logo{
+
+
+  height: 80px; /* or adjust as needed */
+  object-fit: contain;
+  mix-blend-mode: screen; /* makes black disappear, keeps gold visible */
+  background-color: transparent;
+  /* filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.1));  */
+  border: 1px solid red;
+}
+
+
+
+@media (max-width: 768px) {
+  .nav-logo {
+    height: 60px !important;
+    padding-left: 10px;
+  }
+}
+
+
+
 
 .main-hero .btn-combo-outside {
   position: relative;
