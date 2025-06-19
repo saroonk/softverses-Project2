@@ -150,12 +150,11 @@ html, body {
 .main-hero .nav-logo{
 
 
-  height: 80px; /* or adjust as needed */
+  height: 80px; 
   object-fit: contain;
-  mix-blend-mode: screen; /* makes black disappear, keeps gold visible */
+  mix-blend-mode: screen; 
   background-color: transparent;
-  /* filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.1));  */
-  /* border: 1px solid red; */
+
 }
 
 
