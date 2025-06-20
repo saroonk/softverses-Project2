@@ -109,8 +109,8 @@ html, body {
   color: white;
   padding: 10px 24px;
   border-radius: 50px;
-  font-family: 'Baloo Bhai 2', cursive;
-  font-weight: 500;
+  font-family: 'Baloo Bhai 2';
+  font-weight: 600;
   font-size: 16px;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -153,6 +153,29 @@ html, body {
   color: #558B2F;
 }
 
+ .nav-logo{
+
+
+  height: 80px; 
+  object-fit: contain;
+  mix-blend-mode: screen; 
+  background-color: transparent;
+
+}
+
+/* .nav-logo{
+  mix-blend-mode: screen;
+  height: 80px;
+} */
+
+
+@media (max-width: 768px) {
+  .nav-logo {
+    height: 60px !important;
+    padding-left: 10px;
+  }
+}
+
 
 
 
@@ -175,7 +198,7 @@ html, body {
         .section-title {
             font-family: 'Libre Baskerville', serif;
             font-size: 3rem;
-            font-weight: 700;
+            font-weight: normal;
             color: #fff;
             margin-bottom: 3rem;
             position: relative;

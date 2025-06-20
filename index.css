@@ -85,6 +85,16 @@ html, body {
   box-shadow: 0 10px 40px rgba(0,0,0,0.3);
 }
 
+
+.main-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(8, 8, 8, 0.782); /* adjust this alpha (0.5) to make it lighter or darker */
+  z-index: 2;
+}
+
 .main-hero .navbar-custom {
   transition: background-color 0.3s ease;
   padding: 1rem 0;
@@ -157,6 +167,10 @@ html, body {
 
 }
 
+/* .nav-logo{
+  mix-blend-mode: screen;
+  height: 80px;
+} */
 
 
 @media (max-width: 768px) {
@@ -177,8 +191,8 @@ html, body {
   color: white;
   padding: 10px 24px;
   border-radius: 50px;
-  font-family: 'Baloo Bhai 2', cursive;
-  font-weight: 500;
+  font-family: 'Baloo Bhai 2';
+  font-weight: 600;
   font-size: 16px;
   text-decoration: none;
   transition: all 0.3s ease;
