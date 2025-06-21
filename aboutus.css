@@ -196,8 +196,10 @@ html, body {
 
 
         .section-title {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 3rem;
+            
+            font-family: 'Baskervville', serif !important;
+
+            font-size: 3.5rem;
             font-weight: normal;
             color: #fff;
             margin-bottom: 3rem;

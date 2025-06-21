@@ -75,7 +75,7 @@ html, body {
     .main-hero {
   background: url('images/37f8587411ada2a46f7e9cebc509ac649af7639f.jpg') no-repeat center center/cover;
   border-radius: 2rem;
-  margin: 2rem;
+  margin-bottom: 2rem;
   overflow: hidden;
   position: relative;
   height: 100vh;
@@ -378,6 +378,33 @@ html, body {
   .navbar-brand{
     padding: 0px 10px;
   }
+
+.main-hero .btn-combo-inside {
+  
+  padding: 4px 12px;
+  border-radius: 50px;
+  color: #fff;
+  font-family: 'Baloo Bhai 2';
+  font-weight: 500;
+  font-size: 13px;
+  transition: transform 0.2s ease;
+  text-decoration: none;
+}
+
+.main-hero .btn-combo-inside .icon-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #282828;
+  color: #7DBB3C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-left: 10px;
+  font-size: 13px;
+  transition: 0.8s;
+}
+
 }
 
 
@@ -920,14 +947,14 @@ html, body {
 
         .timeline .main-title {
             font-family: 'Libre Baskerville', serif;
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             color: #ffffff;
             text-align: center;
             margin-bottom: 100px;
             position: relative;
             z-index: 2;
             letter-spacing: -0.02em;
-            font-weight: 400;
+            font-weight: normal !important;
         }
 
         .timeline-wrapper {
@@ -984,7 +1011,7 @@ html, body {
         }
 
         .timeline-point:nth-child(4) {
-            left: 92%;
+            left: 88%;
             top: 50%;
             transform: translateY(-50%);
         }
@@ -1058,7 +1085,7 @@ html, body {
 
         .timeline .point-description {
             font-family: 'Inter', sans-serif;
-            font-size: 1rem;
+            font-size: 0.8rem;
             color: #cccccc;
             line-height: 1.6;
             font-weight: 300;
@@ -1120,7 +1147,7 @@ html, body {
             }
             
             .timeline .point-description {
-                font-size: 0.9rem;
+                font-size: 0.7rem;
             }
             
             .timeline .point-content {
@@ -1148,7 +1175,7 @@ html, body {
             }
             
             .timeline .point-description {
-                font-size: 0.85rem;
+                font-size: 0.65rem;
             }
         }
 
@@ -1156,7 +1183,7 @@ html, body {
             .timeline-container {
                 padding: 40px 20px;
                 border-radius: 40px;
-                min-height: 800px;
+                min-height: 900px;
             }
             
             
@@ -1271,7 +1298,7 @@ html, body {
             .timeline-container {
                 padding: 30px 15px;
                 border-radius: 30px;
-                min-height: 700px;
+                min-height: 1000px;
             }
             
             .timeline .main-title {
@@ -1413,13 +1440,6 @@ html, body {
     }
 }
 
-
-
-
-
-
-
-/* Add this to your CSS to prevent horizontal overflow */
 
 
 
@@ -1710,40 +1730,215 @@ html, body {
 
 
 
-    /* images-rows/////////////////////////// */
+/* ==== Gallery Layout ==== */
+.images-row {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 
-    .images-row{
+.images-row .image-row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
 
-            margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-      
+.gallery-item {
+  width: 25%;
+  cursor: pointer;
+}
 
-    }
+.row-img {
+  width: 100%;
+  height: 415px;
+  object-fit: cover;
+  display: block;
+}
 
-    .images-row .image-row {
-      display: flex;
-      flex-wrap: nowrap; 
-      width: 100vw; 
-      
-    }
+/* Medium: 2 per row */
+@media (max-width: 768px) {
+  .gallery-item {
+    width: 50%;
+  }
 
-    .images-row .row-img {
-      width: 25vw; 
-      height: 415px;
-      object-fit: cover;
-      display: block;
-      
-    }
+  .row-img {
+    height: 250px;
+  }
+}
 
-    @media (max-width: 576px) {
-      .images-row .row-img {
-        width: 25vw;
-        height: 150px;
-        
-      }
-    }
+/* Small: 1 per row */
+@media (max-width: 576px) {
+  .gallery-item {
+    width: 100%;
+  }
 
+  .row-img {
+    height: 200px;
+  }
+}
+
+/* ==== Lightbox Styles ==== */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.lightbox.active {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-container {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.lightbox-image.active {
+  opacity: 1;
+}
+
+.lightbox-controls {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  opacity: 1;
+  z-index: 10001;
+}
+
+.lightbox-btn {
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #000;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.lightbox-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.05);
+}
+
+/* Navigation Arrows */
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10001;
+  transition: all 0.3s ease;
+}
+
+.lightbox-prev {
+  left: 20px;
+}
+
+.lightbox-next {
+  right: 20px;
+}
+
+.lightbox-nav:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.lightbox-counter {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: white;
+  backdrop-filter: blur(10px);
+  z-index: 10001;
+}
+
+.loading-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.loading-spinner.show {
+  opacity: 1;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+
+/* Add fade transition */
+.lightbox-image.fade-out {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.lightbox-image.fade-in {
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
 
 
 
@@ -1883,11 +2078,13 @@ html, body {
   position: absolute;
   top: 50px;
   left: 640px;
-  font-size: 50px;
-  font-weight: 600;
+  font-size: 40px;
+  font-weight: normal;
   color: white;
   z-index: 3;
-  font-family: 'Inter', sans-serif;
+  /* font-family: 'Inter', sans-serif; */
+            font-family: 'Libre Baskerville', serif;
+
   white-space: normal;
   width: 600px;
   line-height: 1.2;
@@ -2007,7 +2204,9 @@ html, body {
       .testimonial-container-section .testimonial-text-overlay {
         top: 50px;
         left: 530px;
-        font-size: 30px;
+        font-size: 28px;
+            font-family: 'Libre Baskerville', serif;
+
       }
 
       .testimonial-container-section .cards-overlay {
@@ -2074,6 +2273,8 @@ html, body {
         top: 50px;
         left: 530px;
         font-size: 30px;
+            font-family: 'Libre Baskerville', serif !important;
+
       }
 
       .testimonial-container-section .cards-overlay {
