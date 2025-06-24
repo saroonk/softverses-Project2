@@ -73,7 +73,7 @@ html, body {
     }
 
     .main-hero {
-  background: url('images/37f8587411ada2a46f7e9cebc509ac649af7639f.jpg') no-repeat center center/cover;
+  /* background: url('images/37f8587411ada2a46f7e9cebc509ac649af7639f.jpg') no-repeat center center/cover; */
   border-radius: 2rem;
   margin-bottom: 2rem;
   overflow: hidden;
@@ -86,14 +86,81 @@ html, body {
 }
 
 
+
+
+#carouselExampleControls {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+
+}
+
+#carouselExampleControls .carousel-inner,
+#carouselExampleControls .carousel-item,
+#carouselExampleControls .carousel-item img {
+  height: 100%;
+  object-fit: cover;
+
+
+}
+
+/* Optional dark overlay */
 .main-hero::before {
   content: '';
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(8, 8, 8, 0.782); /* adjust this alpha (0.5) to make it lighter or darker */
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* 0.8 opacity = 20% visible image */
   z-index: 2;
 }
+
+
+/* Keep content above everything */
+
+.main-hero .hero-content {
+  position: relative;
+  z-index: 3;
+  pointer-events: none; 
+
+
+}
+
+.main-hero .hero-content {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+  backdrop-filter: none !important;
+}
+
+
+.main-hero .hero-content * {
+  pointer-events: auto; /* But keep buttons/links clickable */
+}
+
+
+
+.carousel-control-prev,
+.carousel-control-next {
+  z-index: 5; /* Above hero content */
+
+
+}
+
+
+@media (max-width: 768px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none !important;
+  }
+}
+
 
         .dropdown-toggle::after {
             content: none !important;

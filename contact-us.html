@@ -110,6 +110,18 @@
                                 <a href="#" class="sub-dropdown-item">Room</a>
                             </div>
                         </div>
+
+                        <div class="dropdown-item">
+                            <div class="dropdown-item-toggle" onclick="toggleSubDropdown('renovation')">
+                                <span>Renovation</span>
+                                <i class="fas fa-chevron-down sub-dropdown-arrow" id="renovationArrow"></i>
+                            </div>
+                            <div class="sub-dropdown-content" id="renovationDropdown">
+                                <a href="#" class="sub-dropdown-item">Home</a>
+                                <a href="#" class="sub-dropdown-item">Flat</a>
+                                <a href="#" class="sub-dropdown-item">Room</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <a href="#" class="menu-item">Press</a>
@@ -373,7 +385,7 @@
             servicesArrow.classList.remove('active');
 
       
-            const subDropdowns = ['commercial', 'residential', 'hospitality'];
+            const subDropdowns = ['commercial', 'residential', 'hospitality', 'renovation'];
             subDropdowns.forEach(id => {
                 const dropdown = document.getElementById(id + 'Dropdown');
                 const arrow = document.getElementById(id + 'Arrow');

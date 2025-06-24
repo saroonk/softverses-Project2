@@ -34,27 +34,35 @@
 
     <section class="main-section ">
     <div class="main-hero ">
-      <!-- <nav class="navbar navbar-expand-lg navbar-dark navbar-custom navbar-transparent">
-        <div class="container navbar-container">
-          
-          <img src="images/FINAL_LOGO_PNG_nobg[1].png" alt="" class="nav-logo ">
-          <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul class="navbar-nav text-center">
-              <li class="nav-item"><a class="nav-link " href="#">Home</a></li>
-              <li class="nav-item"><a class="nav-link " href="#">Projects</a></li>
-              <li class="nav-item"><a class="nav-link " href="#">Gallery</a></li>
-              <li class="nav-item"><a class="nav-link " href="#">About Us</a></li>
-            </ul>
-          </div>
-          <a href="#" class="btn-combo-outside d-none d-lg-inline-flex ">
-            Contact with us
-            <span class="icon-circle"><i class="bi bi-arrow-up-right"></i></span>
-          </a>
-        </div>
-      </nav> -->
+
+
+
+
+                  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="images/4a55d12acfbe3e98dfe6cb0cad54ed5d8210882c.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="images/66878b007410800d33e501ce4a6592ccbb6ac6da.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="images/66878b007410800d33e501ce4a6592ccbb6ac6da.jpg" alt="Third slide">
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
 
 
 
@@ -111,6 +119,18 @@
                                 <i class="fas fa-chevron-down sub-dropdown-arrow" id="hospitalityArrow"></i>
                             </div>
                             <div class="sub-dropdown-content" id="hospitalityDropdown">
+                                <a href="#" class="sub-dropdown-item">Home</a>
+                                <a href="#" class="sub-dropdown-item">Flat</a>
+                                <a href="#" class="sub-dropdown-item">Room</a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-item">
+                            <div class="dropdown-item-toggle" onclick="toggleSubDropdown('renovation')">
+                                <span>Renovation</span>
+                                <i class="fas fa-chevron-down sub-dropdown-arrow" id="renovationArrow"></i>
+                            </div>
+                            <div class="sub-dropdown-content" id="renovationDropdown">
                                 <a href="#" class="sub-dropdown-item">Home</a>
                                 <a href="#" class="sub-dropdown-item">Flat</a>
                                 <a href="#" class="sub-dropdown-item">Room</a>
@@ -816,7 +836,7 @@ document.addEventListener('DOMContentLoaded', function() {
             servicesArrow.classList.remove('active');
 
    
-            const subDropdowns = ['commercial', 'residential', 'hospitality'];
+            const subDropdowns = ['commercial', 'residential', 'hospitality', 'renovation'];
             subDropdowns.forEach(id => {
                 const dropdown = document.getElementById(id + 'Dropdown');
                 const arrow = document.getElementById(id + 'Arrow');
