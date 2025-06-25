@@ -741,28 +741,60 @@ document.addEventListener('DOMContentLoaded', function() {
             const body = document.body;
             let isMenuOpen = false;
 
-            menuToggle.addEventListener('click', function() {
-                isMenuOpen = !isMenuOpen;
+            // menuToggle.addEventListener('click', function() {
+            //     isMenuOpen = !isMenuOpen;
                 
-                if (isMenuOpen) {
-                    slidingMenu.classList.add('active');
-                    menuToggle.classList.add('active');
-                    body.style.overflow = 'hidden';
-                    navbar.classList.add('menu-open');
-                    navbar.classList.add('scrolled');
-                } else {
-                    slidingMenu.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                    body.style.overflow = 'auto';
-                    navbar.classList.remove('menu-open');
+            //     if (isMenuOpen) {
+            //         slidingMenu.classList.add('active');
+            //         menuToggle.classList.add('active');
+            //         body.style.overflow = 'hidden';
+            //         navbar.classList.add('menu-open');
+            //         navbar.classList.add('scrolled');
+            //     } else {
+            //         slidingMenu.classList.remove('active');
+            //         menuToggle.classList.remove('active');
+            //         body.style.overflow = 'auto';
+            //         navbar.classList.remove('menu-open');
                     
                     
-                    if (window.scrollY <= 50) {
-                        navbar.classList.remove('scrolled');
-                    }
-                    closeAllDropdowns();
-                }
-            });
+            //         if (window.scrollY <= 50) {
+            //             navbar.classList.remove('scrolled');
+            //         }
+            //         closeAllDropdowns();
+            //     }
+            // });
+
+
+
+            menuToggle.addEventListener('click', function() {
+    isMenuOpen = !isMenuOpen;
+    
+    if (isMenuOpen) {
+        slidingMenu.classList.add('active');
+        menuToggle.classList.add('active');
+        body.style.overflow = 'hidden';
+        navbar.classList.add('menu-open');
+        navbar.classList.add('scrolled');
+        
+        // Pause the carousel when menu is open
+        const carousel = new bootstrap.Carousel(document.getElementById('carouselExampleControls'));
+        carousel.pause();
+    } else {
+        slidingMenu.classList.remove('active');
+        menuToggle.classList.remove('active');
+        body.style.overflow = '';
+        navbar.classList.remove('menu-open');
+        
+        // Re-enable touch events on carousel
+        const carousel = new bootstrap.Carousel(document.getElementById('carouselExampleControls'));
+        carousel.cycle();
+        
+        if (window.scrollY <= 50) {
+            navbar.classList.remove('scrolled');
+        }
+        closeAllDropdowns();
+    }
+});
 
             const menuItems = document.querySelectorAll('.menu-item:not(.dropdown-menu-item)');
             menuItems.forEach(item => {

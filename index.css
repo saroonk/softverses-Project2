@@ -147,6 +147,13 @@ html, body {
 
 
 
+  .carousel-inner {
+    touch-action: pan-y;
+}
+
+.carousel-item {
+    touch-action: pan-y;
+}
 
 
 .carousel-control-prev,
