@@ -98,7 +98,7 @@
                             </div>
 
                 </div>
-                <a href="#" class="menu-item">Gallery</a>
+                <a href="gallery.html" class="menu-item">Gallery</a>
                 <a href="#" class="menu-item">Contact</a>
             </div>
             
@@ -754,7 +754,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const menuItems = document.querySelectorAll('.menu-item:not(.dropdown-menu-item)');
             menuItems.forEach(item => {
                 item.addEventListener('click', function(e) {
-                    e.preventDefault();
+                   
                     isMenuOpen = false;
                     slidingMenu.classList.remove('active');
                     menuToggle.classList.remove('active');
