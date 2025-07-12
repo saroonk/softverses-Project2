@@ -1,7 +1,5 @@
 
 
-
-
         @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
 
@@ -98,6 +96,8 @@ html, body {
 
 }
 
+
+
 #carouselExampleControls .carousel-inner,
 #carouselExampleControls .carousel-item,
 #carouselExampleControls .carousel-item img {
@@ -107,7 +107,15 @@ html, body {
 
 }
 
-/* Optional dark overlay */
+
+
+.carousel-control-prev,
+.carousel-control-next {
+  z-index: 20;
+  pointer-events: auto !important;
+}
+
+
     .main-hero::before {
       content: '';
       position: absolute;
@@ -121,7 +129,7 @@ html, body {
     }
 
 
-/* Keep content above everything */
+
 
 .main-hero .hero-content {
   position: relative;
@@ -141,9 +149,10 @@ html, body {
   backdrop-filter: none !important;
 }
 
-
-/* .main-hero .hero-content * {
-  pointer-events: auto; /* But keep buttons/links clickable */
+ 
+.main-hero .hero-content * {
+  pointer-events: auto; 
+}
 
 
 
@@ -888,7 +897,6 @@ html, body {
     font-size: 14px;
   }
 }
-
 
 
 
